@@ -44,5 +44,18 @@ def create_chatbot_corpus(words, classes, word_tags_list,ignore_words):
     print(stem_words)
     print(word_tags_list[0])
     print(classes)
+def create_bot_corpus(stem_words, classes):
 
+    stem_words = sorted(list(set(stem_words)))
+    classes = sorted(list(set(classes)))
+
+    pickle.dump(stem_words, open('words.pkl','wb'))
+    pickle.dump(classes, open('classes.pkl','wb'))
+
+    return stem_words, classes
+
+stem_words, classes = create_bot_corpus(stem_words,classes)  
+
+print(stem_words)
+print(classes)
  
